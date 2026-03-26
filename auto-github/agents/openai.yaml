@@ -1,0 +1,4 @@
+interface:
+  display_name: "GitHub Repo Publisher"
+  short_description: "Create GitHub repositories and push local code safely."
+  default_prompt: "Use this skill to create a GitHub repository with gh, initialize or inspect git state, and push the current project without destructive git operations."
