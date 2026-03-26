@@ -1,0 +1,4 @@
+interface:
+  display_name: "API-First Web Automation"
+  short_description: "Discover APIs and docs before using browser automation."
+  default_prompt: "Use this skill when a task may involve browser automation; first discover whether official APIs, documented endpoints, or direct URLs exist, and only fall back to UI automation when needed."
