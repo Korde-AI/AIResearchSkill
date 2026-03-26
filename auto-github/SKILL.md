@@ -13,7 +13,7 @@ Use this skill when the user wants a repeatable workflow for turning a local fol
    Run `scripts/github_repo_publish.py inspect --source-dir <dir>`.
 
 2. Create or attach the remote.
-   Run `scripts/github_repo_publish.py create-repo --source-dir <dir> --repo <owner/name> [--public|--private]`.
+   Run `scripts/github_repo_publish.py create-repo --source-dir <dir> --repo <owner/name> [--public|--private] [--description "..."] [--topics a,b,c]`.
 
 3. Commit and push.
    Run `scripts/github_repo_publish.py push --source-dir <dir> --message "<commit message>"`.
@@ -38,7 +38,9 @@ python ~/.codex/skills/github-repo-publisher/scripts/github_repo_publish.py \
   create-repo \
   --source-dir /path/to/project \
   --repo ShenzheZhu/my-project \
-  --public
+  --public \
+  --description "Reusable AI agent skills and automation workflows." \
+  --topics ai,agents,automation,codex,developer-tools
 ```
 
 Commit and push:
@@ -57,6 +59,7 @@ python ~/.codex/skills/github-repo-publisher/scripts/github_repo_publish.py \
 - If the directory is not a git repo, initialize it with `git init -b main`.
 - If the repo has no commits, create a normal initial commit before pushing.
 - If `origin` already exists and does not match the requested remote, stop instead of rewriting it silently.
+- When creating a public repo, prefer setting a clear GitHub description and 3-8 relevant topics.
 
 ## Resources
 

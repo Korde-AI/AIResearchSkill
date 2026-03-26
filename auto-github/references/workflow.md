@@ -13,6 +13,9 @@
 - Initialize git when missing
 - Default branch is `main`
 - Use `gh repo create <owner/name> --source . --remote origin`
+- If available, set repo metadata right after creation:
+  - description
+  - topics
 - Use `--push` only when the user already wants an immediate first push and the worktree is committed
 
 ## Push

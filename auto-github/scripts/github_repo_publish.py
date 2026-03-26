@@ -129,12 +129,26 @@ def cmd_create_repo(args: argparse.Namespace) -> int:
         ]
         run(cmd, source_dir)
 
+    edit_cmd = ["gh", "repo", "edit", args.repo]
+    has_edit = False
+    if args.description:
+        edit_cmd.extend(["--description", args.description])
+        has_edit = True
+    if args.topics:
+        for topic in args.topics:
+            edit_cmd.extend(["--add-topic", topic])
+        has_edit = True
+    if has_edit:
+        run(edit_cmd, source_dir)
+
     print(
         json.dumps(
             {
                 "source_dir": str(source_dir),
                 "repo": args.repo,
                 "origin": remotes(source_dir).get("origin"),
+                "description": args.description,
+                "topics": args.topics or [],
             },
             ensure_ascii=False,
             indent=2,
@@ -194,6 +208,11 @@ def build_parser() -> argparse.ArgumentParser:
     create_parser = subparsers.add_parser("create-repo")
     create_parser.add_argument("--source-dir", required=True)
     create_parser.add_argument("--repo", required=True, help="owner/name")
+    create_parser.add_argument("--description")
+    create_parser.add_argument(
+        "--topics",
+        help="Comma-separated GitHub topics to apply after repo creation.",
+    )
     visibility = create_parser.add_mutually_exclusive_group()
     visibility.add_argument("--public", action="store_true")
     visibility.add_argument("--private", action="store_true")
@@ -208,6 +227,8 @@ def build_parser() -> argparse.ArgumentParser:
 def main() -> int:
     parser = build_parser()
     args = parser.parse_args()
+    if getattr(args, "topics", None):
+        args.topics = [topic.strip() for topic in args.topics.split(",") if topic.strip()]
     if args.command == "inspect":
         return cmd_inspect(args)
     if args.command == "create-repo":
