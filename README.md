@@ -1,6 +1,12 @@
-# Common Skills
+# myskill
 
-This repository stores reusable Codex skills.
+This repository stores reusable agent skills and automation toolkits.
+
+It is designed to work across agents:
+
+- Codex can use each folder as a native skill source.
+- Claude Code and other coding agents can read the same folders as reusable playbooks and run the bundled scripts directly.
+- The `scripts/` and `references/` folders are agent-agnostic; `SKILL.md` is the Codex-oriented entrypoint.
 
 ## Structure
 
@@ -15,7 +21,18 @@ This repository stores reusable Codex skills.
 
 ## Usage
 
-Copy a skill folder into `~/.codex/skills/` or keep this repository as a reference collection.
+For Codex:
+
+- Copy a skill folder into `~/.codex/skills/`
+- Or clone this repo and copy the specific folders you want
+
+For Claude Code or other agents:
+
+- Read the skill folder's `SKILL.md` for the workflow
+- Run the scripts in `scripts/`
+- Use `references/` as supporting documentation
+
+The repository is intentionally simple so the same folder can be consumed by multiple agents without format conversion.
 
 Each skill contains:
 
