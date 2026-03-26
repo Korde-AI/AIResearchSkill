@@ -1,0 +1,4 @@
+interface:
+  display_name: "OpenReview Submission Helper"
+  short_description: "Automate OpenReview author filling and submission edits."
+  default_prompt: "Use this skill to inspect OpenReview submissions, resolve author profile IDs, update author lists, and batch-submit or edit papers safely."
