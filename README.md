@@ -1,4 +1,4 @@
-# myskill
+# CommonSkill
 
 This repository stores reusable agent skills and automation toolkits.
 
