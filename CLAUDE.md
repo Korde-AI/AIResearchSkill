@@ -20,6 +20,9 @@ Use this repository as a cross-agent toolkit.
 - `api-first-web-automation/`
   Use before browser automation. Check for official APIs, docs, direct URLs, and likely endpoints first.
 
+- `latex-page-reduction/`
+  Use when a LaTeX paper exceeds its page limit. Covers priority-ordered trimming techniques, hard rules (no [H]→[t], no content deletion, no em dashes), and merge-conflict handling with Overleaf.
+
 ## Operating rule
 
 Prefer the stable interface in this order:
