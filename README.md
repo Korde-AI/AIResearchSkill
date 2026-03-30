@@ -1,4 +1,4 @@
-# ResearchSkill
+# AIResearchSkill
 
 This repository stores reusable agent skills for common AI research usage.
 
