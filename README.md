@@ -1,6 +1,6 @@
-# CommonSkill
+# ResearchSkill
 
-This repository stores reusable agent skills and automation toolkits.
+This repository stores reusable agent skills for common AI research usage.
 
 It is designed to work across agents:
 
