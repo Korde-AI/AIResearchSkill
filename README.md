@@ -19,6 +19,9 @@ It is designed to work across agents:
 - `api-first-web-automation/`
   Web-task automation guidance that first searches for official APIs, docs, direct URLs, and likely endpoints before falling back to browser automation.
 
+- `latex-page-reduction/`
+  Reduce a LaTeX conference paper to a hard page limit (e.g., 9 pages for COLM/ICLR/ICML). Covers priority-ordered trimming techniques (syntactic tightening → removing redundant examples → negative vspace → structural moves), hard rules (never change `[H]` float, no em dashes, no content deletion without approval), Overleaf merge-conflict handling, and common pitfalls.
+
 ## Usage
 
 For Codex:
